@@ -1,0 +1,156 @@
+<!--
+  Main sidebar seen on the left. may be static or collapsing depending on selected state.
+
+    * Collapsing - navigation automatically collapse when mouse leaves it and expand when enters.
+    * Static - stays always open.
+-->
+<nav id="sidebar" class="sidebar" role="navigation">
+    <!-- need this .js class to initiate slimscroll -->
+    <div class="js-sidebar-content">
+        <header class="logo hidden-xs">
+            <%= link_to site_title, root_path %>
+        </header>
+        <!-- seems like lots of recent admin template have this feature of user info in the sidebar.
+             looks good, so adding it and enhancing with notifications -->
+        <div class="sidebar-status visible-xs">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="thumb-sm avatar pull-right">
+                    <img class="img-circle" src="/assets/production/demo/people/a5.jpg" alt="...">
+                </span>
+                <!-- .circle is a pretty cool way to add a bit of beauty to raw data.
+                     should be used with bg-* and text-* classes for colors -->
+                <span class="circle bg-warning fw-bold text-gray-dark">
+                    13
+                </span>
+                &nbsp;
+                Philip <strong>Smith</strong>
+                <b class="caret"></b>
+            </a>
+            <!-- #notifications-dropdown-menu goes here when screen collapsed to xs or sm -->
+        </div>
+        <!-- main notification links are placed inside of .sidebar-nav -->
+        <ul class="sidebar-nav">
+            <li class="active">
+                <!-- an example of nested submenu. basic bootstrap collapse component -->
+                <a href="#sidebar-dashboard" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </span>
+                    Documents
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-dashboard" class="collapse in">
+                    <li>
+                        <%= link_to documents_path do %>
+                            <span class="icon">
+                                <i class="glyphicon glyphicon-stats"></i>
+                            </span>
+                            Discover
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to new_document_path,  data: { no_turbolink: true } do %>
+                            <span class="icon">
+                                <i class="glyphicon glyphicon-stats"></i>
+                            </span>
+                            Upload
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <%= link_to edit_author_path(current_user) do %>
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    Profile
+                <% end %>
+            </li>
+
+            <li class="visible-xs">
+                <%= link_to destroy_user_session_path, method: :DELETE do %>
+                    <span class="icon">
+                        <i class="fa fa-sign-out"></i> &nbsp;
+                    </span> Log Out
+                <% end %>
+            </li>
+        </ul>
+
+
+
+    </div>
+</nav>
+<!-- This is the white navigation bar seen on the top. A bit enhanced BS navbar. See .page-controls in _base.scss. -->
+<nav class="page-controls navbar navbar-default">
+    <div class="container-fluid">
+        <!-- .navbar-header contains links seen on xs & sm screens -->
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li>
+                    <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
+                    <a class="hidden-sm hidden-xs" id="nav-state-toggle" href="#" title="Turn on/off sidebar collapsing" data-placement="bottom">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </a>
+                    <!-- shown on xs & sm screen. collapses and expands navigation -->
+                    <a class="visible-sm visible-xs" id="nav-collapse-toggle" href="#" title="Show/hide sidebar" data-placement="bottom">
+                        <span class="rounded rounded-lg bg-gray text-white visible-xs"><i class="fa fa-bars fa-lg"></i></span>
+                        <i class="fa fa-bars fa-lg hidden-xs"></i>
+                    </a>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right visible-xs">
+
+            </ul>
+            <!-- xs & sm screen logo -->
+            <a class="navbar-brand visible-xs" href="index.html">
+                <i class="fa fa-circle text-gray mr-n-sm"></i>
+                <i class="fa fa-circle text-warning"></i>
+                &nbsp;
+                <%= site_title %>
+                &nbsp;
+                <i class="fa fa-circle text-warning mr-n-sm"></i>
+                <i class="fa fa-circle text-gray"></i>
+            </a>
+        </div>
+
+        <!-- this part is hidden for xs screens -->
+        <div class="collapse navbar-collapse">
+            <!-- search form! link it to your search server -->
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle dropdown-toggle-notifications" id="notifications-dropdown-toggle" data-toggle="dropdown">
+
+                        &nbsp;
+                        <%= current_user.email %><!-- Philip <strong>Smith</strong> -->&nbsp;
+            
+                     </a>
+                    <!-- ready to use notifications dropdown.  inspired by smartadmin template.
+                         consists of three components:
+                         notifications, messages, progress. leave or add what's important for you.
+                         uses Sing's ajax-load plugin for async content loading. See #load-notifications-btn -->
+                
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-cog fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="glyphicon glyphicon-user"></i> &nbsp; My Account</a></li>
+                        <li class="divider"></li>
+
+         
+                        <li>
+                            <%= link_to destroy_user_session_path, method: :DELETE do %>
+                                <i class="fa fa-sign-out"></i> &nbsp; Log Out
+                            <% end %>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

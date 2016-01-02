@@ -1,0 +1,179 @@
+<div class="content-wrap"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+    <!-- main page content. the place to put widgets in. usually consists of .row > .col-md-* > .widget.  -->
+    <main id="content" class="content" role="main">
+        <%= render 'layouts/braintree_errors' %>
+        <%= render 'layouts/errors' %>
+        <div class="row">
+            <div class="col-md-12">
+                <section class="widget">
+                    <header>
+                        <h4>
+                            Become an author
+                         
+                        </h4>
+                        <div class="widget-controls">
+                            <a data-widgster="expand" title="Expand" href="#" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <div class="widget-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                     
+                                <div id="wizard" class="form-wizard">
+                                    <ul class="nav-justified mb-sm nav nav-pills">
+                                        <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true">
+                                            <small>1.</small>
+                                             Your Details</a></li>
+                                        <li><a href="#tab2" data-toggle="tab">
+                                            <small>2.</small>
+                                            Payment</a></li>
+                        
+                                   
+                                    </ul>
+                                    <div id="bar" class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-gray-light" style="width: 25%;"></div>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane bg-gray-lighter active" id="tab1" >
+                                            <%= form_for @author, url: author_path(current_user), method: :put, "data-parsley-priority-enabled" => "false", novalidate: "novalidate", html: {id: 'author_form'} do |f| %>
+                                                <%= f.hidden_field :type, :value => "Author" %>
+                                                <fieldset>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <!-- Username -->
+                                                              
+                                                                <%= f.label :first_name, "First Name" %>
+                                                                <%= f.text_field :first_name, class: 'form-control', required: 'required' %>
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <%= f.label :last_name, "Last Name" %>
+                                                                <%= f.text_field :last_name, class: 'form-control', required: 'required' %>
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <%= f.label :date_of_birth, "Birthday" %>
+                                                        <%= f.text_field :date_of_birth, class: 'form-control', required: 'required' %>
+                                                        <span class="help-block">07-03-1987</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <!-- Email -->
+                                                        <%= f.label :description, "Description" %>
+                                                        <%= f.text_area :description, class: 'form-control' %>     
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <!-- Password -->
+                                                        <%= f.label :street_address, "Street Address" %>
+                                                                <%= f.text_field :street_address, class: 'form-control', required: 'required' %>
+                                                            <span class="help-block">Please provide your address</span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <!-- Password -->
+                                                                <%= f.label :locality, "City" %>
+                                                                <%= f.text_field :locality, class: 'form-control', required: 'required' %>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <!-- Password -->
+                                                               <%= f.label :region, "State" %>
+                                                                <%= f.text_field :region, class: 'form-control', required: 'required' %>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                              <%= f.label :postal_code, "Zip Code" %>
+                                                                <%= f.text_field :postal_code, class: 'form-control', required: 'required' %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                           
+                                        </div>
+                                        <div class="tab-pane bg-gray-lighter" id="tab2" style="height: 444px;">
+                                           
+                                                <fieldset>
+                                              
+                                                
+    
+                                                    <div class="form-group">
+                                                        <label for="routing_number">Routing Number</label>
+
+                                                        <%= f.text_field :routing_number, class: 'form-control', id: 'routing_number' %>
+                                                        
+                                                        <span class="help-block">Please provide your routing number</span>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="account_number">Account Number</label>
+
+
+                                                        <%= f.text_field :account_number, class: 'form-control', id: 'account_number' %>
+                                                        <span class="help-block">Please provide your account number</span>
+
+                                                    </div>
+                                                </fieldset>
+                                             <% end %><!-- End first form   -->
+                                        </div>
+                                       
+
+                                        <ul class="pager wizard">
+                                            <li class="previous disabled">
+                                                <button class="btn btn-default btn-rounded pull-left">
+                                                    <i class="fa fa-caret-left"></i> &nbsp; Previous
+                                                </button>
+                                            </li>
+                                            <li class="next">
+                                                <button class="btn btn-primary btn-rounded pull-right">
+                                                    Next &nbsp; <i class="fa fa-caret-right"></i></button>
+                                            </li>
+                                            <li class="finish" style="display: none">
+                                                <button class="btn btn-success btn-rounded pull-right" id="submit_form">
+                                                    Finish &nbsp; <i class="glyphicon glyphicon-ok"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+<%= javascript_include_tag 'production/form-wizard' %>
+<script>
+    $(document).ready(function(){
+        $('#submit_form').click(function(){
+            $('#author_form').submit();
+        });
+        $("#author_date_of_birth").inputmask({mask: "99/99/9999"});
+        // $('#author_date_of_birth').datetimepicker({
+        //     format: 'MM/DD/YYYY'
+        // });
+    });
+</script>
+
+<!-- <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+<script>
+alert('yolo');
+var braintree = require("braintree-web");
+
+braintree.setup("<%#= Braintree::ClientToken.generate %>", "Custom");
+</script> -->
+

@@ -1,0 +1,16 @@
+//= require production/vendor/jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require production/vendor/jquery.pjax
+//= require production/vendor/bootstrap/transition
+//= require production/vendor/bootstrap/collapse
+//= require production/vendor/bootstrap/dropdown
+//= require production/vendor/bootstrap/button
+//= require production/vendor/bootstrap/tooltip
+//= require production/vendor/bootstrap/alert
+//= require production/vendor/jquery.slimscroll
+//= require production/vendor/widgster
+//= require production/vendor/pace
+//= require production/vendor/jquery.touchSwipe
+//= require production/settings
+//= require production/app

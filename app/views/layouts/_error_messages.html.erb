@@ -1,0 +1,11 @@
+<% if error_object.errors.any? %>
+  <div class="alert alert-danger">
+    <h2><%= pluralize(error_object.errors.count, "error") %> prohibited this document from being saved:</h2>
+
+    <ul>
+    <% error_object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

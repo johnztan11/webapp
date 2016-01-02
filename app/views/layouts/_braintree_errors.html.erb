@@ -1,0 +1,9 @@
+<% if @braintree_errors %>
+	<div class="alert alert-danger">
+		<ul>
+			<% @braintree_errors.each do |e| %>
+				<li><%= e.message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
