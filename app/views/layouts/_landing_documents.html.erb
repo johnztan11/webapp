@@ -16,7 +16,11 @@
           <div class="row">
             <% documents.compact.each do |document| %>
               <div class="col-sm-4">
-                <%= link_to document, class: 'thumb preview-thumb' do document.title end%>
+                <%= link_to document, class: 'thumb preview-thumb' do %>
+                  <div>Document: <%= document.title %></div>
+                  <div>Price: <%= document.price %></div>
+                  <div>Author: <%= document.author %></div >                 
+                <% end %>
               </div>
             <% end %>
           </div> <!-- end row -->
