@@ -1,21 +1,22 @@
 <!-- SCREENSHOTS -->
 <section class="section" id="screenshots">
   <div class="container">
+    <!-- header -->
     <div class="row">
       <div class="col-sm-12 text-center">
         <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Our Library</h1>
       </div> 
-    </div> <!-- end row -->
+    </div>
+    <!-- end header -->
 
+    <!-- documents -->
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
         <% @documents.in_groups_of(3).each do |documents| %>
           <div class="row">
             <% documents.compact.each do |document| %>
               <div class="col-sm-4">
-                <%= link_to document, class: 'thumb preview-thumb' do %>
-                  <%= image_tag document.cover, class: 'thumb-img', alt: document.title %>
-                <% end %>
+                <%= link_to document %>
               </div>
             <% end %>
           </div> <!-- end row -->
