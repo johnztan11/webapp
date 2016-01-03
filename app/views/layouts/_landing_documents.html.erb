@@ -21,6 +21,7 @@
                 <% end %>
                   <div>Price: <%= document.price %></div>
                   <div>Author: <%= document.author.full_name %></div>
+                  <div><%= image_tag document.cover, class: 'thumb-img', alt: "No image uploaded" %></div>
               </div>
             <% end %>
           </div> <!-- end row -->
