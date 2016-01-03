@@ -16,7 +16,9 @@
           <div class="row">
             <% documents.compact.each do |document| %>
               <div class="col-sm-4">
-                <%= link_to document %>
+                <%= link_to document, class: 'thumb preview-thumb' do %>
+                  <%= image_tag document.cover, class: 'thumb-img', alt: document.title %>
+                <% end %>
               </div>
             <% end %>
           </div> <!-- end row -->
