@@ -17,7 +17,7 @@
             <% documents.compact.each do |document| %>
               <div class="col-sm-4">
                 <%= link_to document, class: 'thumb preview-thumb' do %>
-                  <%= image_tag document.cover, class: 'thumb-img', alt: document.title %>
+                  <%= image_tag document.author, class: 'thumb-img', alt: document.title %>
                 <% end %>
               </div>
             <% end %>
