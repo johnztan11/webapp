@@ -1,4 +1,4 @@
-<!-- SCREENSHOTS -->
+<!-- product cards -->
 <section class="section" id="screenshots">
   <div class="container">
     <!-- header -->
@@ -19,7 +19,7 @@
                 <%= link_to document, class: 'thumb preview-thumb' do %>
                   <div>Document: <%= document.title %></div>
                 <% end %>
-                  <div>Price: <%= document.price %></div>
+                  <div>Price: <%= number_to_currency(document.price, :unit => "$") %></div>
                   <div>Author: <%= document.author.full_name %></div>
                   <div><%= image_tag document.cover, class: 'thumb-img', alt: "No image uploaded" %></div>
               </div>
@@ -30,4 +30,4 @@
     </div> <!-- end row -->
   </div>
 </section>
-<!-- END SCREENSHOTS -->
+<!-- end product cards -->
