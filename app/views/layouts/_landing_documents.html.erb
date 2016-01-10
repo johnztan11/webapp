@@ -16,7 +16,7 @@
           <div class="row">
             <% documents.compact.each do |document| %>
               <div class="col-sm-4">
-                <%= link_to document, class: 'thumb preview-thumb' do %>
+                <%= link_to document do %>
                   <div>Document: <%= document.title %></div>
                 <% end %>
                     <div>Price: <%= number_to_currency(document.price, :unit => "$") %></div>
