@@ -6,7 +6,7 @@
       <div class="col-sm-12 text-center">
         <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Our Library</h1>
       </div> 
-    </div>
+    </div><br>
     <!-- end header -->
 
     <!-- documents -->
@@ -15,7 +15,7 @@
         <% @documents.in_groups_of(3).each do |documents| %>
           <div class="row">
             <% documents.compact.each do |document| %>
-              <div class="col-sm-4">
+              <div class="col-sm-4", class="thumbnail">
                 <%= link_to document do %>
                   <div>Document: <%= document.title %></div>
                 <% end %>
