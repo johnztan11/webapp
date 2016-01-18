@@ -1,0 +1,57 @@
+
+
+<div class="content-wrap">
+    <!-- main page content. the place to put widgets in. usually consists of .row > .col-md-* > .widget.  -->
+    <main id="content" class="content" role="main">
+        <h1 class="page-title">Dashboard 
+            <small><small>
+                <%= link_to "Are you an author?", edit_author_path(current_user) %></small></small>
+        </h1>
+            <% @documents.in_groups_of(3) do |documents| %>
+                <div class="row">
+                    <% documents.compact.each do |document| %>
+                        <div class="col-md-4">
+                            <section class="widget">
+                                <div class="widget-controls">
+                                    <a href="#"><i class="fa fa-refresh"></i></a>
+                                    <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                                </div>
+                                <div class="widget-body">
+                                    <div class="widget-top-overflow windget-padding-md clearfix bg-warning text-white" style="
+                background-image: url(<%= image_path document.cover.url %>); background-repeat: no-repeat; background-position: center; background-size: 100%;
+            ">
+                                        <h3 class="mt-lg mb-lg"> 
+                                            <span class="fw-semi-bold">
+                                                <%= link_to document.title, document, style: 'color: white;', data: { no_turbolink: true } %>
+                                            </span>
+                                        </h3>
+                                        <ul class="tags text-white pull-right">
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                    <div class="post-user mt-n-lg">
+                                        <span class="thumb-lg pull-left mr">
+                                            
+                                        </span>
+                                        <h5 class="mt-sm fw-normal text-white"><%= document.author.full_name %></h5>
+                                        <p class="fs-mini text-muted"><time>25 mins</time> &nbsp; <i class="fa fa-map-marker"></i> &nbsp; near Amsterdam</p>
+                                    </div>
+                                    <p class="text-light fs-mini m">
+                                        <%= document.description %>
+                                    </p>
+                                </div>
+                                
+                            </section>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+
+    </main>
+</div>
+<!-- The Loader. Is shown when pjax happens -->
+<div class="loader-wrap hiding hide">
+    <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+</div>
+
+

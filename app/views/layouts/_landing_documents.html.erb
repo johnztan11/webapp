@@ -1,0 +1,33 @@
+<!-- product cards -->
+<section class="section" id="screenshots">
+  <div class="container">
+    <!-- header -->
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Our Library</h1>
+      </div> 
+    </div><br>
+    <!-- end header -->
+
+    <!-- documents -->
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <% @documents.in_groups_of(3).each do |documents| %>
+          <div class="row">
+            <% documents.compact.each do |document| %>
+              <div class="col-sm-4", class="thumb preview-thumb">
+                <%= link_to document do %>
+                  <div>Document: <%= document.title %></div>
+                <% end %>
+                    <div>Price: <%= number_to_currency(document.price, :unit => "$") %></div>
+                    <div>Author: <%= document.author.full_name %></div><br>
+                    <div><%= image_tag document.cover, class: 'thumb-img', alt: "No image uploaded" %></div>
+              </div>
+            <% end %>
+          </div> <!-- end row -->
+        <% end %>
+      </div> <!-- col -->
+    </div> <!-- end row -->
+  </div>
+</section>
+<!-- end product cards -->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>Johntan</title>
+  	<%= stylesheet_link_tag    'application', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'production_requirements', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  	<%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+<%= render 'layouts/application_navbar' if user_signed_in? %>
+
+
+<%= yield %>
+
+<% if flash.any? %>
+	<%= javascript_include_tag 'production/ui-notifications', 'data-turbolinks-track' => true %>
+	<script>
+		$(document).ready(function(){
+			<% flash.each do |key, value| %>
+				Messenger().post({
+				    message: '<%= value %>',
+				    type: '<%= key %>',
+				    showCloseButton: true
+				});
+			<% end %>
+		});
+	</script>
+<% end %>
+
+</body>
+</html>
