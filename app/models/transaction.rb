@@ -7,6 +7,7 @@ class Transaction < ActiveRecord::Base
 
   def send_to_user
   	puts "in send_to_user method".green
+  	puts "self before if is #{self.inspect}".green
   	if self.non_user_email
   		puts "self is #{@self.inspect}".blue
   		@document = self.document
