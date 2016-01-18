@@ -19,15 +19,6 @@
                                     </span>
                                     <h4 class="fw-normal"> <span class="fw-semi-bold"><%= @document.title %></span></h4>
                                     <p><%= @author.full_name %></p>
-                                    <a href="#" class="btn btn-danger btn-sm mt">
-                                        &nbsp;Send
-                                        <i class="fa fa-envelope ml-xs"></i>&nbsp;
-                                    </a>
-                                    <ul class="contacts">
-                                        <li><i class="fa fa-phone fa-fw mr-xs"></i><a href="#"> +375 29 555-55-55</a></li>
-                                        <li><i class="fa fa-envelope fa-fw mr-xs"></i><a href="#"> psmith@example.com</a></li>
-                                        <li><i class="fa fa-map-marker fa-fw mr-xs"></i><a href="#"> Minsk, Belarus</a></li>
-                                    </ul>
                                 </div>
                             </div>
                             <div class="col-sm-7">
@@ -36,7 +27,6 @@
                                         <p class="value">
                                             <%= number_to_currency @document.price, precision: 0 %>
                                         </p>
-                                        <h5 class="name">Posts</h5>
                                     </div>
 <!--                                     <div class="stat-item">
                                         <p class="value">9.38%</p>
@@ -47,17 +37,25 @@
                                         <h5 class="name">Followers</h5>
                                     </div> -->
                                 </div>
-                                <p class="text-right mt-lg">
-                                    <a href="#" class="label label-warning"> UI/UX </a>
-                                    <a href="#" class="label label-danger ml-xs"> Web Design </a>
-                                    <a href="#" class="label label-default ml-xs"> Mobile Apps </a>
-                                </p>
-                                <p class="lead mt-lg">
-                                    <%= @author.description %>
-                                </p>
-                                <p>
-                                    <%= @document.description %>
-                                </p>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4 style="font-weight: bold; margin-bottom: 0px;">
+                                    About <%= @author.first_name %>
+                                </h4>
+                                <p class="lead">
+                                     <%= @author.description %>
+                                 </p>
+                            </div>
+                            <div class="col-xs-12">
+                                <h4 style="font-weight: bold; margin-bottom: 0px;">
+                                    About <%= @document.title %>
+                                </h4>
+                                <p class="lead">
+                                     <%= @document.description %>
+                                 </p>
                             </div>
                         </div>
                     </div>
