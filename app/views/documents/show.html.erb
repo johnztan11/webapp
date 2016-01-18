@@ -67,7 +67,7 @@
                 <section class="activities">
                     <% if !user_signed_in? %>
                         <%= render 'layouts/purchase_form' %>
-                    <% elsif @author == current_user %>
+                    <% elsif @document.created_by?(@author) %>
                     <% elsif current_user.has_owned_document?(@document) %>
                         <h2>Download</h2>
                         <section class="event">

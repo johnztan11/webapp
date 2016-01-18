@@ -13,8 +13,12 @@
                         <div class="col-md-4">
                             <section class="widget">
                                 <div class="widget-controls">
-                                    <a href="#"><i class="fa fa-refresh"></i></a>
-                                    <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                                    <% if document.created_by?(current_user) %>
+                                        <%= link_to document_path(document), method: :delete do %>
+                                            <i class="glyphicon glyphicon-remove"></i>
+                                        <% end %>
+                                        <!-- <a href="#" data-widgster="close"></a> -->
+                                    <% end %>
                                 </div>
                                 <div class="widget-body">
                                     <div class="widget-top-overflow windget-padding-md clearfix bg-warning text-white" style="
