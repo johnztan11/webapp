@@ -34,6 +34,6 @@ class TransactionsController < ApplicationController
 	private
 
 	def transaction_params
-		params.require(:transaction).permit(:document_id)
+		params.require(:transaction).permit(:document_id, :non_user_email)
 	end
 end
