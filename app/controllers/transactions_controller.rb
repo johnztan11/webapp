@@ -16,6 +16,7 @@ class TransactionsController < ApplicationController
 				puts "transaction a success \n"
 				puts "transaction is #{braintree_call}"
 				flash[:success] = "You have purchased #{@document.title}"
+				puts "the params just before save are #{transaction_params.inspect}".blue
 				@transaction.save
 				redirect_to @document
 			else
