@@ -57,6 +57,8 @@ group :production do
 	gem 'rails_12factor'
 end
 
+
+gem 'colorize'
 gem 'binding_of_caller'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
