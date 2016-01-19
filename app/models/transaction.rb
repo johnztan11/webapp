@@ -10,7 +10,8 @@ class Transaction < ActiveRecord::Base
   	puts "self before if is #{self.inspect}".green
   	if self.non_user_email
   		puts "self is #{self.inspect}".blue
-  		@document = self.document
+      puts "document is #{self.document}".green
+  		@document = Document.find(self.document_id)
   		@email = self.non_user_email
   		TransactionsMailer.send_to_unsigned_in_user(@email, @document)
   	end
