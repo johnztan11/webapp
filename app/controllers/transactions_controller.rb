@@ -8,6 +8,7 @@ class TransactionsController < ApplicationController
 		@transaction.buyer = current_user
 		@transaction.author = @document.author
 		payment_method_nonce = params[:payment_method_nonce]
+		@non_user_email = transaction_params[:non_user_email] if transaction_params[:non_user_email]
 		
 		if @transaction.valid?
 			braintree_call = create_transaction(@document, payment_method_nonce) #from BrainTree Helper
@@ -18,7 +19,12 @@ class TransactionsController < ApplicationController
 				flash[:success] = "You have purchased #{@document.title}"
 				puts "the params just before save are #{transaction_params.inspect}".blue
 				@transaction.save
-				redirect_to @document
+
+				if @non_user_email
+					redirect_to document_path(@document, downloaded_document: "yes")
+				else
+					redirect_to @document
+				end
 			else
 				flash[:danger] = "Your transaction failed because #{braintree_call.errors}"
 				puts "braintree_call FAILED \n"

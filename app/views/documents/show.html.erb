@@ -64,23 +64,15 @@
             <div class="col-md-6">
                 <section class="activities">
                     <% if !user_signed_in? %>
-                        <%= render 'layouts/purchase_form' %>
+                        <% if params[:downloaded_document] %>
+                            <%= render 'layouts/purchased_document' %>
+                        <% else %>
+                            <%= render 'layouts/purchase_form' %>
+                        <% end %>
                     <% elsif @document.created_by?(@author) %>
                     <% elsif current_user.has_owned_document?(@document) %>
                         <h2>Download</h2>
-                        <section class="event">
-                            <span class="thumb-sm avatar pull-left mr-sm">
-                                <%= image_tag @document.cover, class: 'img-circle' %>
-                                
-                            </span>
-                            <h4 class="event-heading"><%= link_to @document.title, @document.doc.url, download: @document.title %> </h4>
-                            <p class="fs-sm text-muted">You purchased on <%= @document.transactions.where(buyer: current_user).first.created_at.strftime("%B %d, %Y") %></p>
-                           
-
-                            <footer>
-    
-                            </footer>
-                        </section>
+                        <%= render 'layouts/purchased_document' %>
                     <% else %>
                         <%= render 'layouts/purchase_form' %>
                     <% end %>
