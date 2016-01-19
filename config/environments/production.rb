@@ -61,7 +61,7 @@ Rails.application.configure do
   # config.assets.precompile += %w( search.js )
 
   #party_foul gem
-  # config.middleware.use('PartyFoul::Middleware')
+  config.middleware.use('PartyFoul::Middleware')
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
