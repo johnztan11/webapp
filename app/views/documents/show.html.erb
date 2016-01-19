@@ -69,7 +69,7 @@
                         <% else %>
                             <%= render 'layouts/purchase_form' %>
                         <% end %>
-                    <% elsif @document.created_by?(@author) %>
+                    <% elsif @document.created_by?(current_user) %>
                     <% elsif current_user.has_owned_document?(@document) %>
                         <h2>Download</h2>
                         <%= render 'layouts/purchased_document' %>
