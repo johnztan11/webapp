@@ -21,7 +21,7 @@
                 <% end %>
                     <div>Price: <%= number_to_currency(document.price, :unit => "$") %></div>
                     <div>Author: <%= document.author.full_name %></div><br>
-                    <div style="text-color:gray"><%= document.description %></div><br>
+                    <div style="color:gray"><%= document.description %></div><br>
                     <div><%= image_tag document.cover, class: 'thumb-img', alt: "No image uploaded" %></div>
               </div>
             <% end %>
