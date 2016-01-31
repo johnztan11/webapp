@@ -86,7 +86,7 @@ class DocumentsController < ApplicationController
 
     def redirect_if_not_author
       unless current_user.author?
-        flash[:success] = "You need to register as an author to upload a document.  Fill out the info below to get started!"
+        flash[:error] = "You need to register as an author to upload a document.  Fill out the info below to get started!"
         redirect_to edit_author_path(current_user) 
       end
     end
