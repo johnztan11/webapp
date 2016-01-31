@@ -21,16 +21,14 @@
                                 </div>
                                 <div class="widget-body">
                                     <div class="widget-top-overflow windget-padding-md clearfix bg-warning text-white" style="
-                background-image: url(<%= image_path document.cover.url %>); background-repeat: no-repeat; background-position: center; background-size: 100%;
-            ">
+                                        background-image: url(<%= image_path document.cover.url %>); background-repeat: no-repeat; background-position: center; background-size: 100%;">
+                                    </div>
+                                    <div class="post-user mt-n-lg">
                                         <h3 class="mt-lg mb-lg"> 
                                             <span class="fw-semi-bold">
                                                 <%= link_to document.title, document, style: 'color: white;', data: { no_turbolink: true } %>
                                             </span>
                                         </h3>
-                                        <ul class="tags text-white pull-right">
-                                            <li></li>
-                                        </ul>
                                     </div>
                                     <div class="post-user mt-n-lg">
                                         <span class="thumb-lg pull-left mr">
