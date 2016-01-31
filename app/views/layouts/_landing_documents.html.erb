@@ -17,10 +17,11 @@
             <% documents.compact.each do |document| %>
               <div class="col-sm-4", class="thumb preview-thumb">
                 <%= link_to document do %>
-                  <div>Document: <%= document.title %></div>
+                  <div><%= document.title %></div>
                 <% end %>
                     <div>Price: <%= number_to_currency(document.price, :unit => "$") %></div>
-                    <div>Author: <%= document.author.full_name %></div><br>
+                    <div>Author: <%= document.author.full_name %></div><br><br>
+                    <div style="background-color:gray"><%= document.description %></div><br><br>
                     <div><%= image_tag document.cover, class: 'thumb-img', alt: "No image uploaded" %></div>
               </div>
             <% end %>
