@@ -2,9 +2,7 @@
 <div class="content-wrap">
     <!-- main page content. the place to put widgets in. usually consists of .row > .col-md-* > .widget.  -->
     <main id="content" class="content" role="main">
-        <h1 class="page-title">Dashboard 
-            <small><small>
-                <%= link_to "Are you an author?", edit_author_path(current_user) %></small></small>
+        <h1 class="page-title">Library
         </h1>
             <% @documents.in_groups_of(3) do |documents| %>
                 <div class="row">
