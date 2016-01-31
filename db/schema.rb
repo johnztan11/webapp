@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160118220059) do
-=======
-ActiveRecord::Schema.define(version: 20151220184827) do
->>>>>>> d09c65119222ff934cab626b7424472ced92d7f9
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -70,10 +66,7 @@ ActiveRecord::Schema.define(version: 20151220184827) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "author_id"
-<<<<<<< HEAD
     t.string   "non_user_email"
-=======
->>>>>>> d09c65119222ff934cab626b7424472ced92d7f9
   end
 
   add_index "transactions", ["author_id"], name: "index_transactions_on_author_id"

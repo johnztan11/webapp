@@ -2,15 +2,10 @@
 
 This webapp enables authors to post and sell PDFs.
 
-<<<<<<< HEAD
 To-Do List
 -- Get Heroku working
 -- Get GitHub connected
 
-=======
-To-do List
-- Need to push to Heroku still
->>>>>>> modify-README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
