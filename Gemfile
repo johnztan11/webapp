@@ -37,11 +37,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-<<<<<<< HEAD
 gem 'puma'
 
-=======
->>>>>>> d09c65119222ff934cab626b7424472ced92d7f9
 gem 'bundler'
 
 gem "figaro"
@@ -60,11 +57,8 @@ group :production do
 	gem 'rails_12factor'
 end
 
-<<<<<<< HEAD
 
 gem 'colorize'
-=======
->>>>>>> d09c65119222ff934cab626b7424472ced92d7f9
 gem 'binding_of_caller'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
