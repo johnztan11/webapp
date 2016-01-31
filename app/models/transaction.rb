@@ -2,6 +2,7 @@ class Transaction < ActiveRecord::Base
   belongs_to :document
   belongs_to :buyer, class_name: 'User', foreign_key: 'buyer_id'
   belongs_to :author
+<<<<<<< HEAD
 
   after_create :send_to_user
 
@@ -16,4 +17,6 @@ class Transaction < ActiveRecord::Base
   		TransactionsMailer.send_to_unsigned_in_user(@email, @document)
   	end
   end
+=======
+>>>>>>> d09c65119222ff934cab626b7424472ced92d7f9
 end
