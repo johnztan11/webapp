@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   devise_scope :user do
-    root to: "users/registrations#new"
+    root to: 'users/registrations#new'
   end
 
   resources :authors, only: [:edit, :update]
