@@ -5,21 +5,12 @@
             <div class="col-md-6">
                 <section class="widget">
                     <div class="widget-body">
-                        <div class="widget-top-overflow text-white">
-                            <div class="height-250 overflow-hidden">
-                                <%= image_tag @document.cover, class: 'img-responsive center-block', style: 'max-height: 100%;' %>
-                            </div>
-
-                        </div>
+                        <!-- title row -->
                         <div class="row">
-                            <div class="col-sm-5 text-center">
+                            <div class="col-sm-5 text-left">
                                 <div class="post-user post-user-profile" style=<%= Rails.env.production? ? "\"margin-top: inherit;\"".html_safe : "" %>>
-                                    <span class="thumb-xlg" style="visibility: hidden;">
-                                        <img class="img-circle" src="/assets/production/demo/people/a5.jpg" alt="...">
-                                    </span>
-                                    <h4 class="fw-normal"> <span class="fw-semi-bold"><%= @document.title %></span></h4>
-                                    <p><%= @author.full_name %></p>
-
+                                    <h2 class="fw-normal"> <span class="fw-semi-bold"><%= @document.title %></span></h2>
+                                    <h4><p><%= @author.full_name %></p></h4>
                                 </div>
                             </div>
                             <div class="col-sm-7">
@@ -28,35 +19,32 @@
                                         <p class="value">
                                             <%= number_to_currency @document.price, precision: 0 %>
                                         </p>
-
                                     </div>
-<!--                                     <div class="stat-item">
-                                        <p class="value">9.38%</p>
-                                        <h5 class="name">Conversion</h5>
-                                    </div>
-                                    <div class="stat-item">
-                                        <p class="value">842</p>
-                                        <h5 class="name">Followers</h5>
-                                    </div> -->
                                 </div>
-
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h4 style="font-weight: bold; margin-bottom: 0px;">
-                                    About <%= @author.first_name %>
-                                </h4>
-                                <p class="lead">
-                                     <%= @author.description %>
-                                 </p>
+                        <!-- cover art row -->
+                        <div class="widget-top-overflow text-white">
+                            <div class="height-150 overflow-hidden">
+                                <%= image_tag @document.cover, class: 'img-responsive right-block', style: 'max-height: 100%;' %>
                             </div>
+                        </div>
+                        <!-- addition info row -->
+                        <div class="row">
                             <div class="col-xs-12">
                                 <h4 style="font-weight: bold; margin-bottom: 0px;">
                                     About <%= @document.title %>
                                 </h4>
                                 <p class="lead">
-                                     <%= @document.description %>
+                                     <h5><%= @document.description %></h5>
+                                 </p>
+                            </div>
+                            <div class="col-xs-12">
+                                <h4 style="font-weight: bold; margin-bottom: 0px;">
+                                    About <%= @author.full_name %>
+                                </h4>
+                                <p class="lead">
+                                     <h5><%= @author.description %></h5>
                                  </p>
                             </div>
                         </div>
