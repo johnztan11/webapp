@@ -5,6 +5,7 @@ This webapp enables authors to post and sell PDFs.
 <<<<<<< HEAD
 To-Do List
 -- Get Heroku working
+-- Get GitHub connected
 
 =======
 To-do List
