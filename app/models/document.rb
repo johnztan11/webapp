@@ -11,11 +11,8 @@ class Document < ActiveRecord::Base
   validates :doc, presence: true
   validates :author, presence: true
 
-<<<<<<< HEAD
   def created_by?(user)
     self.author == user
   end
 
-=======
->>>>>>> d09c65119222ff934cab626b7424472ced92d7f9
 end
