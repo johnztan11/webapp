@@ -16,9 +16,9 @@
           <div class="row">
             <% documents.compact.each do |document| %>
               <div class="col-sm-4", class="thumb preview-thumb">
-                  <a href="#" id="load_sign_up" data-toggle="modal" data-target="#myModal" style="h1"><%= document.title %></a>
+                  <a href="#" id="load_sign_up" data-toggle="modal" data-target="#myModal"><h3><%= document.title %></h3></a>
                   <div>Price: <%= number_to_currency(document.price, :unit => "$") %></div>
-                  <div>Author: <%= document.author.full_name %></div><br>
+                  <div>Posted By: <%= document.author.full_name %></div><br>
                   <div style="color:gray"><%= document.description %></div><br>
                   <div><%= image_tag document.cover, class: 'thumb-img', alt: "No image uploaded" %></div>
               </div>
