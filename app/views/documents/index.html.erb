@@ -1,9 +1,6 @@
-
 <div class="content-wrap">
-    <!-- main page content. the place to put widgets in. usually consists of .row > .col-md-* > .widget.  -->
     <main id="content" class="content" role="main">
-        <h1 class="page-title">Library
-        </h1>
+        <h1 class="page-title">Our Library</h1>
             <% @documents.in_groups_of(3) do |documents| %>
                 <div class="row">
                     <% documents.compact.each do |document| %>
@@ -14,14 +11,14 @@
                                         <%= link_to document_path(document), method: :delete do %>
                                             <i class="glyphicon glyphicon-remove"></i>
                                         <% end %>
-                                        <!-- <a href="#" data-widgster="close"></a> -->
                                     <% end %>
                                 </div>
                                 <div class="widget-body">
+                                    <!-- cover art -->
                                     <div class="widget-top-overflow windget-padding-md clearfix bg-warning text-white" style="
                                         background-image: url(<%= image_path document.cover.url %>); background-repeat: no-repeat; background-position: center; background-size: 100%;">
                                     </div>
-                                    <div></div>
+                                    <!-- document information -->
                                     <div class="post-user mt-n-lg">
                                         <h3 class="mt-lg mb-lg"> 
                                             <span class="fw-semi-bold">
@@ -30,16 +27,12 @@
                                         </h3>
                                     </div>
                                     <div class="post-user mt-n-lg">
-                                        <span class="thumb-lg pull-left mr">
-                                            
-                                        </span>
                                         <h5 class="mt-sm fw-normal text-black"><%= document.author.full_name %></h5>
                                     </div>
                                     <p class="text-light fs-mini m">
                                         <%= document.description %>
                                     </p>
                                 </div>
-                                
                             </section>
                         </div>
                     <% end %>
