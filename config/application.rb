@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module Johntan
   class Application < Rails::Application
     EMAIL = "zjohn9379@gmail.com"
+    APPNAME = "MarketVault"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
