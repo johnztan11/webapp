@@ -29,7 +29,6 @@
                                             </span>
                                             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                         </div>
-                                        <span class="help-block">Awesome file input plugin allows you to create a visually appealing file or image inputs.</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -51,16 +50,23 @@
                                                 <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                             </div>
                                         </div>
-                                        <span class="help-block">Showing a thumbnail instead of the filename when uploading an image.</span>
                                     </div>
                                 </div>
+                                <!-- file description -->
                                 <div class="form-group">
                                     <%= f.label :description, "Description", class: 'col-sm-4 control-label' %>
                                     <div class="col-sm-8">
                                         <%= f.text_area :description, class: 'form-control', rows: 4 %>
                                     </div>
                                 </div>
-
+                                <!-- file cateogry -->
+                                <div class="form-group">
+                                    <%= f.label :category, "Category", class: 'col-sm-4 control-label' %>
+                                    <div class="col-sm-8">
+                                        <%= f.text_area :category, class: 'form-control', rows: 4 %>
+                                    </div>
+                                </div>
+                                <!--file price -->
                                 <div class="form-group">
                                     <%= f.label :price, "Price", class: 'control-label col-sm-4' %>
                                     <div class="col-sm-8">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118220059) do
+ActiveRecord::Schema.define(version: 20160205150939) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160118220059) do
     t.integer  "price"
     t.string   "title"
     t.integer  "author_id"
+    t.string   "category"
   end
 
   add_index "documents", ["author_id"], name: "index_documents_on_author_id"
