@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'landings/index'
 
   resources :documents
   resources :transactions, only: [:create]
