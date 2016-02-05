@@ -6,7 +6,7 @@
                     <div class="widget-body">
                         <!-- title row -->
                         <div class="row">
-                            <div class="col-sm text-left">
+                            <div class="col-sm">
                                 <div class="post-user post-user-profile" style=<%= Rails.env.production? ? "\"margin-top: inherit;\"".html_safe : "" %>>
                                     <h2 class="fw-normal"> <span class="fw-semi-bold"><%= @document.title %></span></h2>
                                     <h4><p><%= @author.full_name %> | <%= number_to_currency @document.price, precision: 0 %> </p></h4>
@@ -15,7 +15,7 @@
                         </div>
                         <!-- cover art row -->
                         <div class="widget-top-overflow text-white">
-                            <div class="height-150 overflow-hidden", align="right">
+                            <div class="height-150 overflow-hidden">
                                 <%= image_tag @document.cover, class: 'img-responsive right-block', style: 'max-height: 100%;' %>
                             </div>
                         </div>
