@@ -62,8 +62,6 @@ class AuthorsController < ApplicationController
 		end
 	end
 
-
-
 	private
 
 	def only_allow_current_user

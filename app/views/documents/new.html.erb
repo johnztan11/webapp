@@ -9,18 +9,12 @@
                         <%= form_for @document, html: {class: 'form-horizontal'}, role: 'form' do |f| %>
                             <fieldset>
                                 <%= render 'layouts/error_messages', error_object: @document %>
-                                <blockquote class="blockquote-reverse">
-                                    <p>The man who is really serious, with the urge to find out what truth is, has no style at all. He lives only in what is.</p>
-                                    <footer>Bruce Lee</footer>
-                                </blockquote>
-
-                                <div class="form-group">
+                                 <div class="form-group">
                                     <%= f.label :title, "Title", class: 'control-label col-sm-4' %>
                                     <div class="col-sm-8">
                                         <%= f.text_field :title, class: 'form-control',  placeholder: "What's your document called?" %>
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <%= f.label :doc, "Upload Your Document", class: 'control-label col-sm-4' %>
                                     <div class="col-sm-8">
