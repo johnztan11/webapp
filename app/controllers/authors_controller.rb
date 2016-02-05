@@ -21,7 +21,6 @@ class AuthorsController < ApplicationController
 		routing_number = trimmed_author_params.delete(:routing_number) #remove routing_number from author_params
 		account_number = trimmed_author_params.delete(:account_number) #remove account_number from author_params
 
-
 		user.assign_attributes(trimmed_author_params)
 		@author = user #for rerendering 'edit'
 		@author.date_of_birth = date_of_birth

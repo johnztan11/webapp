@@ -13,7 +13,8 @@
         <!-- menu -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-              <a href="#" id="load_sign_up" data-toggle="modal" data-target="#myModal" style="color:white">Account</a>
+              <a href="#" id="load_sign_up" data-toggle="modal" data-target="#myModal" style="color:white" padding="0x,10x" align="right">Account</a>
+              <div><%= link_to "About Us", aboutus_page_path(), style: "color:white", align: "right" %></div>
           </ul>
         </div>
         <!--end menu -->
@@ -37,9 +38,6 @@
   <!-- DOCUMENT LIBRARY -->
   <%= render 'layouts/landing_documents' %>
   <!-- END DOCUMENT LIBRARY -->
-  
-  <!-- FOOTER -->
-  <% link_to pages/aboutus %>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
