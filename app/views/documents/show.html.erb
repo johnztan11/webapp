@@ -1,5 +1,4 @@
 <div class="content-wrap">
-    <!-- main page content. the place to put widgets in. usually consists of .row > .col-md-* > .widget.  -->
     <main id="content" class="content" role="main">
         <div class="row">
             <div class="col-md-6">
@@ -15,9 +14,11 @@
                             </div>
                         </div>
                         <!-- cover art row -->
-                        <div class="widget-top-overflow text-white">
-                            <div class="height-150 overflow-hidden", align="right">
-                                <%= image_tag @document.cover, class: 'img-responsive right-block', style: 'max-height: 100%;' %>
+                        <div class="container">
+                            <div class="widget-top-overflow text-white">
+                                <div class="height-150 overflow-hidden", align="right">
+                                    <%= image_tag @document.cover, class: 'img-responsive right-block', style: 'max-height: 100%;' %>
+                                </div>
                             </div>
                         </div>
                         <!-- addition info row -->
