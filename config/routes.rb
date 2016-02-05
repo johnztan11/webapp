@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'landings/index'
+  get 'directories/aboutus', :as => 'aboutus_page'
 
   resources :documents
   resources :transactions, only: [:create]
