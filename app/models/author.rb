@@ -1,6 +1,5 @@
 class Author < User
 
-
 	has_many :documents
 	has_many :seller_transactions, class_name: 'Transaction', source: :author
 

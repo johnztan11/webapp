@@ -1,10 +1,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  attr_accessor :date_of_birth
   attr_accessor :account_number
   attr_accessor :routing_number
-  
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -12,7 +10,6 @@ class User < ActiveRecord::Base
   validates :type, inclusion: {in: %W(Author)}, :allow_nil => true
 
   has_many :buyer_transactions, class_name: 'Transaction', foreign_key: 'buyer_id'
-
 
   def author?
   	self.type == "Author"
