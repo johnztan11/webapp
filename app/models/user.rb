@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  attr_accessor :date_of_birth
   attr_accessor :account_number
   attr_accessor :routing_number
 
