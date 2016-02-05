@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'landings/index'
+  get 'pages/aboutus'
 
   resources :documents
   resources :transactions, only: [:create]
