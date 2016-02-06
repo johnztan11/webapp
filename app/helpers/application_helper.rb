@@ -1,6 +1,6 @@
 module ApplicationHelper
 
   def site_title
-    "Tan"
+    "MarketVault"
   end
 end
